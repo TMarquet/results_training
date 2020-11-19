@@ -10,7 +10,7 @@ on:
   pull_request:
     branches: [ main ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# A workflow run is made up of one or more jobs that can run sequentially or in paralle
 jobs:
   # This workflow contains a single job called "build"
   build:
@@ -25,6 +25,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Compile LateX
         uses: vinay0410/tectonic-action@v1.1.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with: 
           tex_path: 'main.tex'
           push: 'yes'
